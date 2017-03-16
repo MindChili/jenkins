@@ -9,9 +9,7 @@ USER root
 RUN \
   apt-get update && \
   apt-get -y upgrade && \
-  apt-get install -y build-essential && \
-  apt-get install -y libssl-dev && \
-  apt-get install -y php-pear
+  apt-get install -y build-essential libssl-dev php-pear php5-dev rsync
 
 # Install and configure libssh
 RUN \
@@ -22,13 +20,19 @@ RUN \
   chmod +x configure && \
   ./configure && \
   make && \
-  make install
+  make install && \
+  printf "\n" | pecl install ssh2-0.13 && \
+  echo 'extension=ssh2.so \n' >> /etc/php5/cli/php.ini
   
 # Install phing and other libraries with pear
 RUN \
+  pear upgrade --force http://pear.php.net/get/PEAR-1.10.3 && \
   pear channel-discover pear.phing.info && \
   pear install [--alldeps] phing/phing && \
   pear install VersionControl_SVN-0.5.1 && \
-  pear install Net_FTP
+  pear install Net_FTP && \
+  pear install Net_Socket && \
+  pear install Net_SMTP && \
+  pear install Mail
   
 USER jenkins
