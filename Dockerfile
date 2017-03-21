@@ -4,6 +4,11 @@ MAINTAINER Tomasz Nassalski <tomasz.nassalski@mindchili.com>
 
 USER root
 
+# Change timezone to Warsaw
+RUN \
+  echo "Europe/Warsaw" > /etc/timezone && \
+  dpkg-reconfigure -f noninteractive tzdata
+
 # INSTALL ADDITIONAL LIBRARIES CONNECTED WITH PHP APPLICATIONS DEPLOYMENT
 
 RUN \
