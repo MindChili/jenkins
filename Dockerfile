@@ -1,4 +1,4 @@
-FROM jenkins:2.32.3
+FROM jenkins:2.46.2
 
 MAINTAINER Tomasz Nassalski <tomasz.nassalski@mindchili.com>
 
@@ -14,7 +14,7 @@ RUN \
 RUN \
   apt-get update && \
   apt-get -y upgrade && \
-  apt-get install -y build-essential libssl-dev php-pear php5-dev rsync
+  apt-get install -y build-essential libssl-dev php-pear php5-dev php5-curl rsync
 
 # Install and configure libssh
 RUN \
