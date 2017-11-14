@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:lts:2.73.3
+FROM jenkins/jenkins:2.90
 
 MAINTAINER Tomasz Nassalski <tomasz.nassalski@mindchili.com>
 
