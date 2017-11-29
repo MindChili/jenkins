@@ -26,8 +26,8 @@ RUN \
   ./configure && \
   make && \
   make install && \
-  printf "\n" | pecl install ssh2-0.13 && \
-  echo 'extension=ssh2.so \n' >> /etc/php5/cli/php.ini
+  printf "\n" | pecl install ssh2-1.1.2 && \
+  echo 'extension=ssh2.so \n' >> /etc/php/7.0/cli/php.ini
   
 # Install phing and other libraries with pear
 RUN \
