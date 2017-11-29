@@ -14,7 +14,7 @@ RUN \
 RUN \
   apt-get update && \
   apt-get -y upgrade && \
-  apt-get install -y build-essential libssl-dev php-pear php5-dev php-curl rsync
+  apt-get install -y build-essential libssl-dev php-pear php-dev php-curl rsync
 
 # Install and configure libssh
 RUN \
