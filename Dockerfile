@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.97
+FROM jenkins/jenkins:2.99
 
 MAINTAINER Tomasz Nassalski <tomasz.nassalski@mindchili.com>
 
@@ -7,7 +7,8 @@ USER root
 # Change timezone to Warsaw
 RUN \
   echo "Europe/Warsaw" > /etc/timezone && \
-  dpkg-reconfigure -f noninteractive tzdata
+  dpkg-reconfigure -f noninteractive tzdata && \
+  ln -sf /usr/share/zoneinfo/Poland /etc/localtime
 
 # INSTALL ADDITIONAL LIBRARIES CONNECTED WITH PHP APPLICATIONS DEPLOYMENT
 
