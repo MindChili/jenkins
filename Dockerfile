@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.103
+FROM jenkins/jenkins:2.104
 
 MAINTAINER Tomasz Nassalski <tomasz.nassalski@mindchili.com>
 
@@ -15,7 +15,7 @@ RUN \
 RUN \
   apt-get update && \
   apt-get -y upgrade && \
-  apt-get install -y build-essential libssl-dev php-pear php-dev php-curl rsync
+  apt-get install -y build-essential libssl-dev php-pear php-dev php-curl php-mbstring php-zip rsync
 
 # Install and configure libssh
 RUN \
@@ -48,5 +48,10 @@ RUN \
   php composer-setup.php && \
   php -r "unlink('composer-setup.php');" && \
   mv composer.phar /usr/local/bin/composer
+  
+# INSTALL OTHER TOOLS
+
+RUN \
+  apt-get install -y mc vim
   
 USER jenkins
