@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.104
+FROM jenkins/jenkins:2.105
 
 MAINTAINER Tomasz Nassalski <tomasz.nassalski@mindchili.com>
 
