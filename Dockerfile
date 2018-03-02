@@ -1,6 +1,6 @@
-FROM jenkins/jenkins:2.105
+FROM jenkins/jenkins:2.109
 
-MAINTAINER Tomasz Nassalski <tomasz.nassalski@mindchili.com>
+LABEL maintainer="Tomasz Nassalski <tomasz.nassalski@mindchili.com>"
 
 USER root
 
