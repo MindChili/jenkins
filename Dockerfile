@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.109
+FROM jenkins/jenkins:2.110
 
 LABEL maintainer="Tomasz Nassalski <tomasz.nassalski@mindchili.com>"
 
